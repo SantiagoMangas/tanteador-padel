@@ -5,14 +5,11 @@ interface InitialScreenProps {
 export function InitialScreen({ onStart }: InitialScreenProps) {
   return (
     <div className="w-full h-screen bg-black text-white relative overflow-hidden cursor-pointer" onClick={onStart}>
-      {/* Imagen de fondo simulada */}
       <img src = "../assets/fondo-precione.jpg" alt="Fondo" className="absolute inset-0 w-full h-full object-cover" />
       {/* Overlay oscuro */}
       <div className="absolute inset-0 bg-black/50" />
 
-      {/* Contenido principal */}
       <div className="relative z-10 h-full flex flex-col">
-        {/* Banner principal */}
         <div className="flex-1 flex items-center justify-center">
           <div className="bg-white/95 text-black w-full px-16 py-12 text-center rounded-2xl">
             <h2 className="text-7xl font-black -skew-x-6 mb-4">PRESIONE CUALQUIER</h2>

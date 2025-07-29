@@ -1,9 +1,7 @@
-"use client"
-
 import { useState } from "react"
 import { InitialScreen } from "./components/initial-screen"
 import { WarmupScreen } from "./components/warmup-screen"
-import { GameScoreboard } from "./components/game-scoreboard"
+import  GameScoreboard  from "./components/game-scoreboard"
 
 type GameState = "initial" | "warmup" | "game"
 

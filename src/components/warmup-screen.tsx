@@ -1,5 +1,3 @@
-"use client"
-
 import { useState, useEffect } from "react"
 
 interface WarmupScreenProps {
@@ -7,7 +5,7 @@ interface WarmupScreenProps {
 }
 
 export function WarmupScreen({ onComplete }: WarmupScreenProps) {
-  const [timeLeft, setTimeLeft] = useState(5) // 5 segundos
+  const [timeLeft, setTimeLeft] = useState(5) // 5segundos
   const [isFinished, setIsFinished] = useState(false)
 
   useEffect(() => {
@@ -30,8 +28,7 @@ export function WarmupScreen({ onComplete }: WarmupScreenProps) {
   if (isFinished) {
     return (
       <div className="w-full h-screen bg-black flex items-center justify-center relative overflow-hidden">
-        {/* Fondo con efecto */}
-        <div className="absolute inset-0 bg-gradient-to-br from-green-800 via-green-600 to-green-400 opacity-40" />
+        <img src = "../assets/fondo-precione.jpg" alt="Fondo" className="absolute inset-0 w-full h-full object-cover" />
 
         {/* Mensaje final */}
         <div className="relative z-10 text-center">
@@ -59,29 +56,27 @@ export function WarmupScreen({ onComplete }: WarmupScreenProps) {
   }
 
   return (
-    <div className="w-full h-screen bg-black text-white flex flex-col">
-      {/* Cronómetro principal */}
+    <div className="w-full h-screen bg-black text-white flex flex-col gap-6">
+      {/* Cronómetro */}
       <div className="flex-1 flex items-center justify-center">
-        <div className="text-center space-y-8">
-          <div className="bg-yellow-400 text-black px-16 py-8 rounded-2xl shadow-2xl">
+          <div className="text-yellow-300 px-40 py-40">
             <div className="text-9xl font-mono font-black tracking-wider">{formatTime(timeLeft)}</div>
           </div>
 
           {/* Logo publicitario simulado */}
-          <div className="bg-red-600 text-white px-12 py-6 rounded-xl shadow-xl">
+          <div className="bg-red-600 text-white px-80 py-50">
             <div className="text-4xl font-bold italic">Coca-Cola</div>
           </div>
-        </div>
       </div>
 
       {/* Banda de estado */}
-      <div className="bg-yellow-400 text-black text-center py-6">
-        <div className="text-4xl font-bold tracking-wide">TIEMPO DE CALENTAMIENTO</div>
+      <div className="bg-yellow-300 text-black text-center py-6">
+        <div className="text-6xl font-bold tracking-wide">TIEMPO DE CALENTAMIENTO</div>
       </div>
 
       {/* Banda inferior */}
-      <div className="bg-blue-600 text-white text-center py-6">
-        <div className="text-3xl font-bold tracking-wide">PARA COMENZAR PARTIDO PRESIONE</div>
+      <div className="bg-blue-600 text-white text-center py-4">
+        <div className="text-6xl font-bold tracking-wide">PARA COMENZAR PARTIDO PRESIONE</div>
       </div>
     </div>
   )
